@@ -5,6 +5,7 @@ const ActiveLevelPrinter = () => {
     const activeLevel = useAppSelector((state) => state.renderModel.activeLevel);
     return (
       <>
+        <h1>3D Rendering</h1>
         <p/>
         ActiveLevel is: {activeLevel}
       </>
