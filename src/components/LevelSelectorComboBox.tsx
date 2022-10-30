@@ -2,17 +2,19 @@ import React from "react";
 
 
 const LevelSelectorComboxBox = () => {
+  let levelsArr = [1,2,3];
+  let levels = levelsArr.map( (id) =>
+  {
+      return (
+        <option key={id} value={id}>Level {id} </option>
+      ) 
+          
+  });
   return (
     <>
       <br/>
       <select name="pets" id="pet-select">
-        <option value="">--Please choose an option--</option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
+        {levels}
       </select>
     </>
   );
