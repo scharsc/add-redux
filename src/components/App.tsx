@@ -1,13 +1,15 @@
 import React from "react";
+import ActiveLevelPrinter from "./ActiveLevelPrinter";
 import LevelSelectorComboxBox from "./LevelSelectorComboBox";
 
 const App = () => {
     return (
       <>
-        <br/>
         <LevelSelectorComboxBox/>
+        <p/>
+        <ActiveLevelPrinter/>
       </>
     );
   };
   
-  export default LevelSelectorComboxBox;
+  export default App;
