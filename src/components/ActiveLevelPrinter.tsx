@@ -1,7 +1,8 @@
 import React from "react";
+import { useAppSelector } from "../store/hooks";
 
 const ActiveLevelPrinter = () => {
-    let activeLevel = 1;
+    const activeLevel = useAppSelector((state) => state.renderModel.activeLevel);
     return (
       <>
         <p/>

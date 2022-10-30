@@ -1,19 +1,21 @@
 import React from "react";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 
 
 const LevelSelectorComboxBox = () => {
-  let levelsArr = [1,2,3];
+
+  const levelsArr = useAppSelector((state) => state.renderModel.levels);
+  const dispatch = useAppDispatch();
   let levels = levelsArr.map( (id) =>
   {
       return (
         <option key={id} value={id}>Level {id} </option>
       ) 
-          
   });
   return (
     <>
       <br/>
-      <select name="pets" id="pet-select">
+      <select name="Levels" id="level-select">
         {levels}
       </select>
     </>
