@@ -14,3 +14,14 @@ body{
 body {
     background: white;
 }
+
+.notSelectedLevel {
+    background-color: white;
+  }
+.selectedLevel {
+    background-color: red;
+  }
+
+.hoveredLevel {
+    background-color: lightblue;
+}
