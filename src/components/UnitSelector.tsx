@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { localize } from "../localize";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { setActiveLevel } from "../store/renderModelSlice";
-import { AllLengthUnits, lengthUnitTranslationKey } from "../units";
+import { AllLengthUnits, LengthUnit, lengthUnitTranslationKey } from "../units";
 
 
 const UnitSeletor = () => {
@@ -14,18 +14,20 @@ const UnitSeletor = () => {
     console.log( "Selected unit:" + value );
   };
 
-  let units = allUnits.map( (id) =>
+  let units = allUnits.map( (unit) =>
   {
-      var unitStr = localize( lengthUnitTranslationKey( id ) );
+      var unitStr = localize( lengthUnitTranslationKey( unit ) );
       return (
-        <option key={id} value={id} > { unitStr } </option>
+        <option key={unit} value={unit} > { unitStr } </option>
       ) 
   });
+  var selectedUnit: LengthUnit = "cm";
 
   return (
     <>
       <br/>
-      <select name="Length Unit" id="length unit select" onChange={selectChange}> 
+      <select name="Length Unit" id="length unit select" 
+      onChange={selectChange} defaultValue={selectedUnit}> 
         {units}
       </select>
     </>
