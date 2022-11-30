@@ -27,7 +27,7 @@ const UnitSeletor = () => {
     <>
       <br/>
       <select name="Length Unit" id="length unit select" 
-      onChange={selectChange} defaultValue={selectedUnit}> 
+      onChange={selectChange} value={selectedUnit}> 
         {units}
       </select>
     </>
