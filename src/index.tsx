@@ -8,33 +8,34 @@ import App from "./components/App";
 
 
 const button = document.getElementById('button')!;
+let count: number = 0;
 button.addEventListener("click", 
 () =>   
 {
   let url = "ws://127.0.0.1:45899/sendto/revit/v1/";
-  
-  console.log("Connecting Client 1")
-  
+  let clientCount = count++;
+  console.log("Connecting Client" + clientCount)
+
   let client1 = new WebSocket(url);
   
   client1.onopen = (ev: Event) => {
-    console.log("Opening Client 1");
+    console.log("Opening Client" + clientCount);
     console.log(ev);
   }
   
   client1.onmessage = (ev: MessageEvent) => {
-    console.log("Message Client 1");
+    console.log("Message Client " + clientCount);
     console.log(ev);
   }
   
   
   client1.onclose = (ev: CloseEvent) => {
-    console.log("Closing Client 1");
+    console.log("Closing Client " + clientCount);
     console.log(ev);
   }
   
   client1.onerror = (ev: Event) => {
-    console.log("Error Client 1");
+    console.log("Error Client " + clientCount);
     console.log(ev);
   }
   
